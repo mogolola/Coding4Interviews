@@ -1,0 +1,15 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "![](https://aigroupz-1258285787.cos.ap-shanghai.myqcloud.com/blog/15490245570653.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/underscore": "^1.10.0",
+    "underscore": "^1.10.2"
+  }
+}

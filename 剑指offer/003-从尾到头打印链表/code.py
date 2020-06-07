@@ -21,9 +21,9 @@ def printListFromTailToHead(listNode):
 
 # 解法2：本身栈调用
 result_array = []
-def printListFromTailToHead(listNode):
+def printListFromTailToHead2(listNode):
     # write code here
     if listNode:
-        printListFromTailToHead(listNode.next)
+        printListFromTailToHead2(listNode.next)
         result_array.append(listNode.val)
     return result_array
