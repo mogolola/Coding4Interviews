@@ -19,10 +19,10 @@ function Power(base:number, exponent:number):number{
 }
 
 //非递归快速幂
-function Power_2(base:number, exponent:number):number{
-    let mask = 0x01;
-    let 
-}
+// function Power_2(base:number, exponent:number):number{
+//     let mask = 0x01;
+//     let 
+// }
 
 
 let tester = new Tester(Power);
