@@ -18,14 +18,36 @@ function Power(base:number, exponent:number):number{
     return result;
 }
 
+function Power_2(base:number, exponent:number):number
+{
+    // write code here
+    if(exponent<0)     return 1 / Power(base, -exponent);
+    if(exponent===0)    return 1;
+    if(exponent===1)    return base;
+    let x = 2, r = base * base;
+    while(exponent >= x * x){
+        r *= r;
+        x *= x;
+    };
+    return r * Power(base, (exponent - x)) 
+}
+
 //非递归快速幂
-// function Power_2(base:number, exponent:number):number{
-//     let mask = 0x01;
-//     let 
-// }
+function Power_3(base:number, exponent:number):number{
+    if(exponent<0)  return 1/Power_3(base, -exponent);
+    if(exponent===0)    return 1;
+    if(exponent===1)    return base;
+    let mask = 0x01, r=1.0, x = base;
+    while(mask!==0){
+        if(mask & exponent) r *= x;
+        x *= x
+        mask <<= 1
+    }
+    return r;
+}
 
 
-let tester = new Tester(Power);
+let tester = new Tester(Power_3);
 tester.addTest(2,0,1);
 tester.addTest(0,2,0);
 tester.addTest(2,2,4);
