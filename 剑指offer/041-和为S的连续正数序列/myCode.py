@@ -1,25 +1,21 @@
-import math
+import math 
 class Solution:
 	def FindContinuousSequence(self, tsum):
-		upperBound = int(tsum/2)+2
-		lowerBound = 0
-		result = []
-		regis = []
-		while(lowerBound < upperBound):
-			regis.append([])
-			for i in range(lowerBound, upperBound):
-				if i == lowerBound:
-					regis[lowerBound].append(i)
-				else:
-					regis[lowerBound].append(regis[lowerBound][-1] + i)
-				if regis[lowerBound][-1] == tsum:
-					if i - max(lowerBound,1)>=1:
-						result.append(list(range(max(lowerBound,1), i+1)))
-				elif regis[lowerBound][-1] > tsum:
-					break
-			lowerBound+=1
-		return result
+		acc = [1]
+		re = []
+		for i in range(int(tsum/2)+2):
+			acc.append(acc[i] + i + 2)
+			if acc[i+1] == tsum:
+				re.append(list(range(1, i+3)))
+		for j in range(0, int(tsum/2)+2):
+			k = j+1
+			while (acc[k]-acc[j]) <= tsum and k<int(tsum/2)+2:
+				tmp = acc[k] - acc[j]
+				if tmp==tsum and (k-j)>1:
+					re.append(list(range(j+2,k+2)))
+				k+=1
+		return re
 
 solution = Solution()
-print(solution.FindContinuousSequence(3))
+print(solution.FindContinuousSequence(100))
 			
