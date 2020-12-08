@@ -25,7 +25,6 @@ function NumberOf1Between1AndN_Solution(n) {
 }
 var Tester_1 = require("Tester");
 var tester = new Tester_1.Tester(NumberOf1Between1AndN_Solution);
-// tester.addTest(13, 6);
-// tester.addTest(1000\0, 4001);
-tester.addTest(21345, 18821);
+tester.addTest(13, 6);
+tester.addTest(10000, 4001);
 tester.doTest();
