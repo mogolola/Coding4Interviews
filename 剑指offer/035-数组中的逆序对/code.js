@@ -11,7 +11,7 @@ function InversePairs(data) {
     var n = 0;
     while (n < data.length) {
         var i = 0;
-        while (i < data.length - n) {
+        while (i < n) {
             if (data[i] > data[i + 1]) {
                 swap(data, i, i + 1);
                 r++;
