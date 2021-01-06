@@ -1,19 +1,18 @@
 "use strict";
-var TreeNode = /** @class */ (function () {
-    function TreeNode(x) {
+class TreeNode {
+    constructor(x) {
         this.val = x;
         this.left = null;
         this.right = null;
     }
-    return TreeNode;
-}());
+}
 function PrintFromTopToBottom(root) {
     // write code here
     if (!root)
         return [];
-    var queue = [root], res = [];
+    let queue = [root], res = [];
     while (queue.length) {
-        var node = queue.shift();
+        let node = queue.shift();
         if (node) {
             node.left && queue.push(node.left);
             node.right && queue.push(node.right);

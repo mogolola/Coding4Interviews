@@ -1,20 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Tester_1 = require("Tester");
-var ListNode = /** @class */ (function () {
-    function ListNode(val) {
+const Tester_1 = require("Tester");
+class ListNode {
+    constructor(val) {
         this.val = val;
         this.next = null;
     }
-    return ListNode;
-}());
+}
 var n1 = new ListNode(3);
 var n2 = new ListNode(0);
 var n3 = new ListNode(5);
 n1.next = n2;
 n2.next = n3;
-var printListFromTailToHead_normal = function (head) {
-    var arr = [];
+let printListFromTailToHead_normal = function (head) {
+    let arr = [];
     do {
         if (head && !((typeof head.val) === "undefined"))
             arr.splice(0, 0, head.val);
@@ -27,9 +26,9 @@ var printListFromTailToHead_normal = function (head) {
     } while (true);
     return arr;
 };
-var printListFromTailToHead_stack = function (head) {
-    var stack = [];
-    var result = [];
+let printListFromTailToHead_stack = (head) => {
+    let stack = [];
+    let result = [];
     while (head) {
         if (typeof head.val !== 'undefined') {
             stack.push(head.val);
@@ -41,9 +40,9 @@ var printListFromTailToHead_stack = function (head) {
     }
     return result;
 };
-var printListFromTailToHead_recursive = function (head) {
-    var resultArr = [];
-    var f = function (head) {
+let printListFromTailToHead_recursive = function (head) {
+    let resultArr = [];
+    let f = (head) => {
         if (head && typeof head.val !== 'undefined') {
             f(head.next);
             resultArr.push(head.val);
@@ -53,7 +52,7 @@ var printListFromTailToHead_recursive = function (head) {
     f(head);
     return resultArr;
 };
-var tester = new Tester_1.Tester(printListFromTailToHead_recursive);
+let tester = new Tester_1.Tester(printListFromTailToHead_recursive);
 tester.addTest(n1, [5, 0, 3]);
 tester.addTest(n2, [5, 0]);
 tester.addTest(n3, [5]);

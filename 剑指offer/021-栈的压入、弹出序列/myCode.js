@@ -1,8 +1,8 @@
 "use strict";
 function IsPopOrder(pushV, popV) {
-    var temp = [];
+    let temp = [];
     while (pushV.length) {
-        var toPush = pushV.shift();
+        let toPush = pushV.shift();
         temp.push(toPush);
         while (popV.length && temp[temp.length - 1] === popV[0]) {
             temp.pop();

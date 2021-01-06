@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]];
 function printMatrix(matrix) {
-    var r = [];
+    let r = [];
     var yMin = 0, xMin = 0, yMax = matrix.length - 1, xMax = matrix[0].length - 1;
     var round = 0, dir = 0;
     var x = 0, y = 0;
     r.push(matrix[y][x]);
-    var deltas = [[1, 0], [0, 1], [-1, 0], [0, -1]];
-    var delta = deltas[dir];
+    let deltas = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+    let delta = deltas[dir];
     do {
         switch (dir) {
             case 0:

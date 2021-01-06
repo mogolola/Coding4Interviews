@@ -1,16 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Tester_1 = require("Tester");
+const Tester_1 = require("Tester");
 function rectCover(number) {
-    var _a;
     // write code here
     if (number === 0)
         return 0;
     if (number === 1)
         return 1;
-    var _b = [1, 1], f1 = _b[0], f2 = _b[1];
+    let [f1, f2] = [1, 1];
     while (number > 1) {
-        _a = [f1 + f2, f2], f2 = _a[0], f1 = _a[1];
+        [f2, f1] = [f1 + f2, f2];
         number--;
     }
     return f2;
