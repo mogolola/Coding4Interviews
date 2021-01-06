@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function swap(A, i, j) {
-    var temp = A[i];
+    let temp = A[i];
     A[i] = A[j];
     A[j] = temp;
 }
@@ -20,9 +20,9 @@ function partition(input, low, high) {
 function GetLeastNumbers_Solution(input, k) {
     if (k > input.length || k <= 0)
         return [];
-    var idx = partition(input, 0, input.length - 1);
-    var low = 0;
-    var high = input.length - 1;
+    let idx = partition(input, 0, input.length - 1);
+    let low = 0;
+    let high = input.length - 1;
     while (idx !== k - 1) {
         if (idx < k - 1) {
             low = idx + 1;
@@ -35,7 +35,7 @@ function GetLeastNumbers_Solution(input, k) {
     }
     return input.slice(k);
 }
-var Tester_1 = require("Tester");
-var tester = new Tester_1.Tester(GetLeastNumbers_Solution);
+const Tester_1 = require("Tester");
+let tester = new Tester_1.Tester(GetLeastNumbers_Solution);
 tester.addTest([4, 5, 1, 6, 2, 7, 3, 8], 4, [1, 2, 3, 4]);
 tester.doTest();

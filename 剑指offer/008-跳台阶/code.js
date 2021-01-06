@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Tester_1 = require("Tester");
+const Tester_1 = require("Tester");
 //递归
 function jumpFloor_recrusive(number) {
     // write code here
@@ -16,16 +16,16 @@ function jumpFloor(number) {
         return 1;
     if (number === 2)
         return 2;
-    var _pre = 1, _cur = 2;
+    let _pre = 1, _cur = 2;
     while (number > 2) {
-        var temp = _cur;
+        let temp = _cur;
         _cur += _pre;
         _pre = temp;
         number--;
     }
     return _cur;
 }
-var tester = new Tester_1.Tester(jumpFloor);
+let tester = new Tester_1.Tester(jumpFloor);
 tester.addTest(1, 1);
 tester.addTest(2, 2);
 tester.addTest(3, 3);

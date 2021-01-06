@@ -7,14 +7,14 @@ function right(i) {
     return 2 * ++i;
 }
 function swap(A, i, j) {
-    var temp = A[i];
+    let temp = A[i];
     A[i] = A[j];
     A[j] = temp;
 }
 function minHeapify(A, i) {
-    var p = A[i];
-    var l = A[left(i)], r = A[right(i)];
-    var smallest;
+    let p = A[i];
+    let l = A[left(i)], r = A[right(i)];
+    let smallest;
     if (p > l) {
         smallest = left(i);
     }
@@ -30,13 +30,13 @@ function minHeapify(A, i) {
     }
 }
 function buildMinHeap(A) {
-    for (var i = Math.floor(A.length / 2); i >= 0; i--) {
+    for (let i = Math.floor(A.length / 2); i >= 0; i--) {
         minHeapify(A, i);
     }
 }
 function GetLeastNumbers_Solution(input, k) {
     // write code here
-    var result = [];
+    let result = [];
     buildMinHeap(input);
     while (k-- > 0) {
         result.push(input.shift());
@@ -44,7 +44,7 @@ function GetLeastNumbers_Solution(input, k) {
     }
     return result;
 }
-var Tester_1 = require("Tester");
-var tester = new Tester_1.Tester(GetLeastNumbers_Solution);
+const Tester_1 = require("Tester");
+let tester = new Tester_1.Tester(GetLeastNumbers_Solution);
 tester.addTest([4, 5, 1, 6, 2, 7, 3, 8], 4, [1, 2, 3, 4]);
 tester.doTest();

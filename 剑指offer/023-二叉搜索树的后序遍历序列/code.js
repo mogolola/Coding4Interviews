@@ -8,14 +8,14 @@
 function helper(sequence) {
     if (!sequence.length)
         return true;
-    var c = sequence.splice(sequence.length - 1, 1)[0];
-    var i = 0;
+    let [c] = sequence.splice(sequence.length - 1, 1);
+    let i = 0;
     while (i < sequence.length) {
         if (sequence[i] > c)
             break;
         i++;
     }
-    var j = i;
+    let j = i;
     while (j < sequence.length) {
         if (sequence[j] < c)
             return false;

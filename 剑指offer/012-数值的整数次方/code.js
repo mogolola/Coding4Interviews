@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Tester_1 = require("Tester");
+const Tester_1 = require("Tester");
 //暴力法
 function Power(base, exponent) {
-    var result = 1;
+    let result = 1;
     if (exponent === 0)
         return 1;
     if (base === 0)
@@ -31,7 +31,7 @@ function Power_2(base, exponent) {
         return 1;
     if (exponent === 1)
         return base;
-    var x = 2, r = base * base;
+    let x = 2, r = base * base;
     while (exponent >= x * x) {
         r *= r;
         x *= x;
@@ -47,7 +47,7 @@ function Power_3(base, exponent) {
         return 1;
     if (exponent === 1)
         return base;
-    var mask = 0x01, r = 1.0, x = base;
+    let mask = 0x01, r = 1.0, x = base;
     while (mask !== 0) {
         if (mask & exponent)
             r *= x;
@@ -56,7 +56,7 @@ function Power_3(base, exponent) {
     }
     return r;
 }
-var tester = new Tester_1.Tester(Power_3);
+let tester = new Tester_1.Tester(Power_3);
 tester.addTest(2, 0, 1);
 tester.addTest(0, 2, 0);
 tester.addTest(2, 2, 4);
