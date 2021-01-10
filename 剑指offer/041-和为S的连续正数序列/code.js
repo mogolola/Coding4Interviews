@@ -9,14 +9,13 @@ function FindContinuousSequence(sum) {
     let rr = [];
     let r = [];
     for (let i = 0; i < Math.ceil(sum / 2); i++) {
-        rr.push(Array(Math.ceil(sum / 2)))
-        rr[i][i] = i+1;
+        rr.push([i + 1]);
         let j = i;
         while (rr[i][j] <= sum) {
             if (rr[i][j] === sum) {
                 r.push(getRange(i + 1, j + 2));
             }
-            rr[i].push(rr[i][j] + j + 2);
+            rr[i].push(rr[i][j] + j + 1);
             j++;
         }
     }

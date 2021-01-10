@@ -5,23 +5,23 @@
     this.right = null;
 } */
 Object.defineProperty(exports, "__esModule", { value: true });
-var helper_1 = require("../helper");
+const helper_1 = require("../helper");
 function isSymmetrical(pRoot) {
     // write code here
     if (!pRoot)
         return true;
-    var cur = [pRoot];
+    let cur = [pRoot];
     function getNext(cur) {
-        var next = [];
+        let next = [];
         while (cur.length) {
-            var node = cur.shift();
+            let node = cur.shift();
             node && next.push(node.left);
             node && next.push(node.right);
         }
         return next;
     }
     function layerIsSymmetrical(lay) {
-        var start = 0, end = lay.length - 1;
+        let start = 0, end = lay.length - 1;
         while (start < end) {
             if (lay[start]) {
                 if (!lay[end] || lay[start].val != lay[end].val) {
@@ -39,22 +39,22 @@ function isSymmetrical(pRoot) {
         return true;
     }
     while (cur.length) {
-        var next = getNext(cur);
+        let next = getNext(cur);
         if (!layerIsSymmetrical(next))
             return false;
-        cur = next.filter(function (node) { return !!node; });
+        cur = next.filter(node => !!node);
     }
     return true;
 }
-var p1 = new helper_1.TreeNode(1);
-var p2 = new helper_1.TreeNode(2);
-var p3 = new helper_1.TreeNode(2);
-var p4 = new helper_1.TreeNode(3);
-var p5 = new helper_1.TreeNode(4);
-var p6 = new helper_1.TreeNode(4);
-var p7 = new helper_1.TreeNode(3);
-var p8 = new helper_1.TreeNode(5);
-var p9 = new helper_1.TreeNode(5);
+let p1 = new helper_1.TreeNode(1);
+let p2 = new helper_1.TreeNode(2);
+let p3 = new helper_1.TreeNode(2);
+let p4 = new helper_1.TreeNode(3);
+let p5 = new helper_1.TreeNode(4);
+let p6 = new helper_1.TreeNode(4);
+let p7 = new helper_1.TreeNode(3);
+let p8 = new helper_1.TreeNode(5);
+let p9 = new helper_1.TreeNode(5);
 p1.left = p2;
 p1.right = p3;
 p2.left = p4;
@@ -63,7 +63,7 @@ p3.left = p6;
 p3.right = p7;
 p4.left = p8;
 p7.right = p9;
-var Tester_1 = require("Tester");
-var tester = new Tester_1.Tester(isSymmetrical);
+const Tester_1 = require("Tester");
+let tester = new Tester_1.Tester(isSymmetrical);
 tester.addTest(p1, true);
 tester.doTest();

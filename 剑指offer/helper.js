@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TreeNode = void 0;
+exports.genNodes = exports.TreeNode = void 0;
 class TreeNode {
     constructor(x) {
         this.val = x;
@@ -9,3 +9,7 @@ class TreeNode {
     }
 }
 exports.TreeNode = TreeNode;
+function genNodes(arr) {
+    return arr.map(v => new TreeNode(v));
+}
+exports.genNodes = genNodes;

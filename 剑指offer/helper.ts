@@ -9,3 +9,7 @@ export class TreeNode{
         this.right = null;
     }
 }
+
+export function genNodes(arr:Array<number>){
+    return arr.map(v=>new TreeNode(v));
+}

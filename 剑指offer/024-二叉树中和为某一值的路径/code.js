@@ -9,9 +9,9 @@ function FindPath(root, expectNumber) {
     // write code here
     if (!root)
         return false;
-    var res = [];
+    let res = [];
     function traverse(node, expectNumber, path) {
-        var _path = path;
+        let _path = path;
         _path.push(node.val);
         if (node.left && node.val <= expectNumber)
             traverse(node.left, expectNumber - node.val, _path);
